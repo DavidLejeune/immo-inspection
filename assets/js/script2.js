@@ -3,7 +3,7 @@ document.getElementById("calculateButton").addEventListener("click", calculateCo
 function calculateCost() {
     const certificationType = document.getElementById("certType").value;
     const area = parseFloat(document.getElementById("area").value);
-    const distance = parseFloat(document.getElementById("distance").value);
+    const distance = parseFloat(document.getElementById("distance").value) || 0; // Assume 0 if distance is not filled
     let baseCost, extraAreaCost, distanceCost;
 
     if (certificationType === "Vastgoedkeuring") {
@@ -30,5 +30,5 @@ function calculateCost() {
 
     const totalCost = baseCost + extraAreaCost + distanceCost;
 
-    document.getElementById("totalCost").textContent = totalCost ;
+    document.getElementById("totalCost").textContent = totalCost;
 }
