@@ -8,7 +8,7 @@ function calculateCost() {
 
     if (certificationType === "Vastgoedkeuring") {
         if (area <= 120) {
-            baseCost = 235;
+            baseCost = 285;
             extraAreaCost = 0;
         } else {
             const extraArea = area - 120;
@@ -18,12 +18,12 @@ function calculateCost() {
         distanceCost = distance < 20 ? 0 : distance >= 20 && distance < 50 ? 50 : distance >= 50 && distance < 100 ? 90 : 150;
     } else if (certificationType === "Opleveringskeuring") {
         if (area <= 120) {
-            baseCost = 225;
+            baseCost = 285;
             extraAreaCost = 0;
         } else {
             const extraArea = area - 120;
-            baseCost = 225 + Math.floor(extraArea / 50) * 40;
-            extraAreaCost = extraArea % 50 === 1 ? 40 : 0;
+            baseCost = 225 + Math.floor(extraArea / 50) * 50;
+            extraAreaCost = extraArea % 50 === 1 ? 50 : 0;
         }
         distanceCost = distance < 20 ? 0 : distance >= 20 && distance < 50 ? 50 : distance >= 50 && distance < 100 ? 90 : 150;
     }
